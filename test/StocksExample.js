@@ -1,7 +1,7 @@
 const { WrapperBuilder } = require("redstone-evm-connector-exp");
 // const { expect } = require("chai");
 
-describe("Stocks example", function () {
+describe("StocksExample", function () {
   let contract;
 
   beforeEach(async () => {

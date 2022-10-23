@@ -3685,10 +3685,10 @@ recursive-readdir@^2.2.2:
   dependencies:
     minimatch "3.0.4"
 
-redstone-evm-connector-exp@^3.0.7:
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/redstone-evm-connector-exp/-/redstone-evm-connector-exp-3.0.7.tgz#25c7e2fd4b8bc46e7008a96ec1c8ac36ff4a5871"
-  integrity sha512-+WiTgFrSCklWENq/DluJZWAFjCofBwo7uAd3iCqq+ZB8xbxq0U4QJDHmaHsY3aDw8U3hOudT43yCquEdWlHaQQ==
+redstone-evm-connector-exp@^3.0.9:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/redstone-evm-connector-exp/-/redstone-evm-connector-exp-3.0.9.tgz#fb7fc70fd69ae5c5a46baf7e8904800315123ba4"
+  integrity sha512-1weodswZJQKcj/zBlw4d3UvUO21aAU8RlDORr6mNACPXUoK5zOuZ+BHufzCAKsqb7Np6P479EOCgmX17xh/1bA==
   dependencies:
     "@openzeppelin/contracts" "^4.7.3"
     ethers "^5.6.8"
