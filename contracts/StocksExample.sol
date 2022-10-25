@@ -3,7 +3,7 @@
 pragma solidity ^0.8.4;
 
 import "hardhat/console.sol";
-import "redstone-evm-connector-exp/dist/contracts/data-services/StocksDemoConsumerBase.sol";
+import "@redstone-finance/evm-connector/dist/contracts/data-services/StocksDemoConsumerBase.sol";
 
 contract StocksExample is StocksDemoConsumerBase {
   /**

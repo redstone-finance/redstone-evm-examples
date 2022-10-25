@@ -1,6 +1,10 @@
 const { formatBytes32String } = require("ethers/lib/utils");
-const { WrapperBuilder } = require("redstone-evm-connector-exp");
+const { WrapperBuilder } = require("@redstone-finance/evm-connector");
 // const { expect } = require("chai");
+
+const redstoneCacheLayerUrls = ["https://d33trozg86ya9x.cloudfront.net"];
+
+// const redstoneCacheLayerUrls = ["http://localhost:3000"];
 
 describe("AvalancheProdExample", function () {
   let contract;
@@ -17,7 +21,7 @@ describe("AvalancheProdExample", function () {
       dataServiceId: "redstone-avalanche-prod",
       uniqueSignersCount: 10,
       dataFeeds: ["AVAX"],
-    }, ["https://d33trozg86ya9x.cloudfront.net"]);
+    }, redstoneCacheLayerUrls);
 
     // Interact with the contract (getting oracle value securely)
     const avaxPriceFromContract = await wrappedContract.getLatestAvaxPrice();
@@ -30,7 +34,7 @@ describe("AvalancheProdExample", function () {
       dataServiceId: "redstone-avalanche-prod",
       uniqueSignersCount: 10,
       dataFeeds: ["AVAX", "ETH", "PNG"],
-    }, ["https://d33trozg86ya9x.cloudfront.net"]);
+    }, redstoneCacheLayerUrls);
     const ids = ["AVAX", "ETH", "PNG"].map(dataFeedId => formatBytes32String(dataFeedId));
     const prices = await wrappedContract.getLatestPricesForManyAssets(ids);
     console.log(prices);

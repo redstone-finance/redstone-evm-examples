@@ -27,6 +27,6 @@
     "typechain": "^8.1.0"
   },
   "dependencies": {
-    "redstone-evm-connector-exp": "^3.0.9"
+    "@redstone-finance/evm-connector": "^0.0.4"
   }
 }

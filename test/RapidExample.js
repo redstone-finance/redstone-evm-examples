@@ -1,4 +1,4 @@
-const { WrapperBuilder } = require("redstone-evm-connector-exp");
+const { WrapperBuilder } = require("@redstone-finance/evm-connector");
 // const { expect } = require("chai");
 
 describe("RapidExample", function () {
