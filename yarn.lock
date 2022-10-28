@@ -665,15 +665,15 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.7.3.tgz#939534757a81f8d69cc854c7692805684ff3111e"
   integrity sha512-dGRS0agJzu8ybo44pCIf3xBaPQN/65AIXNgK8+4gzKd5kbvlqyxryUYVLJv7fK98Seyd2hDZzVEHSWAh0Bt1Yw==
 
-"@redstone-finance/evm-connector@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.0.4.tgz#df6d58cc07398ac615a1b7c3c09918673222d57d"
-  integrity sha512-2pLM9+LyRrUDkWLsy5TaIbMX+XqaSJtyFEyVIodWL74xnBwVY7rZ4pNJFA2jj5oiUUUh/pBu3GiyrQMqDPC03Q==
+"@redstone-finance/evm-connector@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.0.7.tgz#cfd4ce2be78c34ae281ca74ba5084f832d06ea22"
+  integrity sha512-oIAv9fBPliZZWEPHandeOVAAnHEz7ask3xJvKU7jmNuFYfQOv1aFdLY/oez8JLNZ/dj3wqZuRSprl+J6vQKzRg==
   dependencies:
     "@openzeppelin/contracts" "^4.7.3"
     ethers "^5.6.8"
-    redstone-protocol latest
-    redstone-sdk latest
+    redstone-protocol "1.0.1"
+    redstone-sdk "1.0.3"
 
 "@scure/base@~1.1.0":
   version "1.1.1"
@@ -3762,14 +3762,14 @@ redstone-oracles-smartweave-contracts@latest:
   resolved "https://registry.yarnpkg.com/redstone-oracles-smartweave-contracts/-/redstone-oracles-smartweave-contracts-1.0.1.tgz#51c802139edf2f46b5f50b9e04995ebbf0e8b3b7"
   integrity sha512-W+h3KB2gdxmK+WnfDT+iZHVQ25LkdTuV5a4cem5pgzgjo6vf2nqFPlkXcWpYI791mdeobwC4yoSybrTrIXSKfQ==
 
-redstone-protocol@latest:
+redstone-protocol@1.0.1, redstone-protocol@latest:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/redstone-protocol/-/redstone-protocol-1.0.1.tgz#2fbcd790e5337f4504854c0d9cbdc3d039c62efc"
   integrity sha512-7pGdNZksFwxBE2A12B+MkQVWVRFePt1zGUqb6Ab1oO/uub7jZUqyD0ipYdT++Ca2BomkVUNllVczdT5pQzhZKA==
   dependencies:
     ethers "^5.6.8"
 
-redstone-sdk@latest:
+redstone-sdk@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/redstone-sdk/-/redstone-sdk-1.0.3.tgz#d01acf01507a00c9030804e801a61466b3ac3532"
   integrity sha512-+faBP3SjDbpbrxQvL4AObQ8rQztO2cnFc9+srSYZUwCJTbPMnvlsHIU0TUw00j0kM0fQKMqhZgEvD+kOa6Xqeg==

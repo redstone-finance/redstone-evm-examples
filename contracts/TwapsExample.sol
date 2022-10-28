@@ -3,7 +3,7 @@
 pragma solidity ^0.8.4;
 
 import "hardhat/console.sol";
-import "@redstone-finance/evm-connector/dist/contracts/data-services/TwapsDemoConsumerBase.sol";
+import "@redstone-finance/evm-connector/contracts/data-services/TwapsDemoConsumerBase.sol";
 
 contract TwapsExample is TwapsDemoConsumerBase {
   /**
