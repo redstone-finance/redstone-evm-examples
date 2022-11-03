@@ -3769,7 +3769,14 @@ redstone-protocol@1.0.1, redstone-protocol@latest:
   dependencies:
     ethers "^5.6.8"
 
-redstone-sdk@1.0.3:
+redstone-protocol@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/redstone-protocol/-/redstone-protocol-1.0.2.tgz#be524037631f510906751b09b8942302f3450324"
+  integrity sha512-nrvRHXRh7Spij/V8RpMuapRtiFUJgMX4RAxNYIb4KtkNGQy80LTJCVEiwt2gOtyMSbIr9kiZxa0RqwDthN968w==
+  dependencies:
+    ethers "^5.6.8"
+
+redstone-sdk@1.0.3, redstone-sdk@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/redstone-sdk/-/redstone-sdk-1.0.3.tgz#d01acf01507a00c9030804e801a61466b3ac3532"
   integrity sha512-+faBP3SjDbpbrxQvL4AObQ8rQztO2cnFc9+srSYZUwCJTbPMnvlsHIU0TUw00j0kM0fQKMqhZgEvD+kOa6Xqeg==
