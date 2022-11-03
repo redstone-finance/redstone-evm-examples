@@ -27,6 +27,6 @@ describe("ManualPayloadExample", function () {
       `0x${redstonePayload}`,
       convertStringToBytes32("STX")
     );
-    console.log({stxPrice: stxPrice.toNumber() / (10 ** 8)});
+    console.log({ stxPrice });
   });
 });

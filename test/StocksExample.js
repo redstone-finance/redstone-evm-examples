@@ -20,6 +20,6 @@ describe("StocksExample", function () {
 
     // Interact with the contract (getting oracle value securely)
     const tslaPriceFromContract = await wrappedContract.getLatestTslaPrice();
-    console.log({tslaPriceFromContract: tslaPriceFromContract.toNumber() / (10 ** 8)});
+    console.log({ tslaPriceFromContract });
   });
 });

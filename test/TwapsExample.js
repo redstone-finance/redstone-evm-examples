@@ -20,6 +20,6 @@ describe("TwapsExample", function () {
 
     // Interact with the contract (getting oracle value securely)
     const ethTwapPriceFromContract = await wrappedContract.getTwapEthPrice();
-    console.log({ethTwapPriceFromContract: ethTwapPriceFromContract.toNumber() / (10 ** 8)});
+    console.log({ ethTwapPriceFromContract });
   });
 });

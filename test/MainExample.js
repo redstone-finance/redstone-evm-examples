@@ -20,6 +20,6 @@ describe("MainExample", function () {
 
     // Interact with the contract (getting oracle value securely)
     const stxPrice = await wrappedContract.getLatestStxPrice();
-    console.log({stxPrice: stxPrice.toNumber() / (10 ** 8)});
+    console.log({ stxPrice });
   });
 });

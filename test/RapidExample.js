@@ -20,6 +20,6 @@ describe("RapidExample", function () {
 
     // Interact with the contract (getting oracle value securely)
     const ethPriceFromContract = await wrappedContract.getLatestEthPrice();
-    console.log({ethPriceFromContract: ethPriceFromContract.toNumber() / (10 ** 8)});
+    console.log({ ethPriceFromContract });
   });
 });

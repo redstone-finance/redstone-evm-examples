@@ -21,7 +21,7 @@ describe("MockExample", function () {
 
     // Interact with the contract (getting oracle value securely)
     const avaxPriceFromContract = await wrappedContract.getLatestAvaxPrice();
-    console.log({avaxPriceFromContract: avaxPriceFromContract.toNumber() / (10 ** 8)});
+    console.log({ avaxPriceFromContract });
   });
 
   it("Get price for AVAX, ETH, and PNG in the same call", async () => {

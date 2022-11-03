@@ -27,7 +27,7 @@
     "typechain": "^8.1.0"
   },
   "dependencies": {
-    "@redstone-finance/evm-connector": "^0.0.7-simple-numeric-mock",
+    "@redstone-finance/evm-connector": "^0.0.9",
     "redstone-protocol": "^1.0.2",
     "redstone-sdk": "^1.0.3"
   }
