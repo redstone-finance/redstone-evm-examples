@@ -1,5 +1,4 @@
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
-// const { expect } = require("chai");
 
 describe("TwapsExample", function () {
   let contract;

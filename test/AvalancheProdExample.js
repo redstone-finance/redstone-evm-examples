@@ -1,10 +1,7 @@
 const { formatBytes32String } = require("ethers/lib/utils");
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
-// const { expect } = require("chai");
 
 const redstoneCacheLayerUrls = ["https://d33trozg86ya9x.cloudfront.net"];
-
-// const redstoneCacheLayerUrls = ["http://localhost:3000"];
 
 describe("AvalancheProdExample", function () {
   let contract;
