@@ -47,4 +47,15 @@ describe("AvalancheProdExample", function () {
     const prices = await wrappedContract.getLatestPricesForManyAssets(ids);
     console.log(prices);
   });
+
+  it("Get price for AVAX, ETH, and PNG in the same call (with dupliates)", async () => {
+    // Wrapping the contract
+    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
+      dataServiceId: "redstone-avalanche-prod",
+      uniqueSignersCount: 10,
+    }, redstoneCacheLayerUrls);
+    const ids = ["AVAX", "ETH", "PNG", "ETH", "ETH", "PNG"].map(dataFeedId => formatBytes32String(dataFeedId));
+    const prices = await wrappedContract.getLatestPricesForManyAssetsWithDuplicates(ids);
+    console.log(prices);
+  });
 });

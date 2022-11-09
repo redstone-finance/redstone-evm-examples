@@ -21,4 +21,12 @@ contract AvalancheProdExample is AvalancheDataServiceConsumerBase {
   {
     return getOracleNumericValuesFromTxMsg(dataFeedIds);
   }
+
+  function getLatestPricesForManyAssetsWithDuplicates(bytes32[] memory dataFeedIdsWithDuplicates)
+    public
+    view
+    returns (uint256[] memory)
+  {
+    return getOracleNumericValuesWithDuplicatesFromTxMsg(dataFeedIdsWithDuplicates);
+  }
 }
