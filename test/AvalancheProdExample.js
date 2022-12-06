@@ -1,7 +1,10 @@
 const { formatBytes32String } = require("ethers/lib/utils");
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
 
-const redstoneCacheLayerUrls = ["https://cache-service-direct-1.b.redstone.finance"];
+const redstoneCacheLayerUrls = [
+  "https://cache-service-direct-1.a.redstone.finance",
+  "https://cache-service-direct-2.a.redstone.finance",
+];
 
 describe("AvalancheProdExample", function () {
   let contract;
@@ -16,7 +19,7 @@ describe("AvalancheProdExample", function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
       dataServiceId: "redstone-avalanche-prod",
-      uniqueSignersCount: 10,
+      uniqueSignersCount: 3,
       dataFeeds: ["AVAX"],
     }, redstoneCacheLayerUrls);
 
@@ -29,7 +32,7 @@ describe("AvalancheProdExample", function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
       dataServiceId: "redstone-avalanche-prod",
-      uniqueSignersCount: 10,
+      uniqueSignersCount: 3,
       dataFeeds: ["AVAX", "ETH", "PNG"],
     }, redstoneCacheLayerUrls);
     const ids = ["AVAX", "ETH", "PNG"].map(dataFeedId => formatBytes32String(dataFeedId));
@@ -41,7 +44,7 @@ describe("AvalancheProdExample", function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
       dataServiceId: "redstone-avalanche-prod",
-      uniqueSignersCount: 10,
+      uniqueSignersCount: 3,
     }, redstoneCacheLayerUrls);
     const ids = ["AVAX", "ETH", "PNG"].map(dataFeedId => formatBytes32String(dataFeedId));
     const prices = await wrappedContract.getLatestPricesForManyAssets(ids);
@@ -52,7 +55,7 @@ describe("AvalancheProdExample", function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
       dataServiceId: "redstone-avalanche-prod",
-      uniqueSignersCount: 10,
+      uniqueSignersCount: 3,
     }, redstoneCacheLayerUrls);
     const ids = ["AVAX", "ETH", "PNG", "ETH", "ETH", "PNG"].map(dataFeedId => formatBytes32String(dataFeedId));
     const prices = await wrappedContract.getLatestPricesForManyAssetsWithDuplicates(ids);
