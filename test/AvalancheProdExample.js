@@ -4,6 +4,7 @@ const { WrapperBuilder } = require("@redstone-finance/evm-connector");
 const redstoneCacheLayerUrls = [
   "https://cache-service-direct-1.a.redstone.finance",
   "https://cache-service-direct-2.a.redstone.finance",
+  "https://cache-service-streamr-1.a.redstone.finance",
 ];
 
 describe("AvalancheProdExample", function () {
