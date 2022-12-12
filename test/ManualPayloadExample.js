@@ -12,7 +12,7 @@ describe("ManualPayloadExample", function () {
   });
 
   it("Get STX price securely using manually built redstone payload", async function () {
-    const signedDataPackagesResponse = await sdk.requestDataPackages({
+    const signedDataPackagesResponse = await sdk.requestRedstonePayload({
       dataServiceId: "redstone-main-demo",
       uniqueSignersCount: 1,
       dataFeeds: ["STX"],
