@@ -2,7 +2,8 @@ const { formatBytes32String } = require("ethers/lib/utils");
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
 
 const redstoneCacheLayerUrls = [
-  "https://d32pw949n3kmfs.cloudfront.net"
+  "https://oracle-gateway-1.a.redstone.finance",
+  "https://oracle-gateway-2.a.redstone.finance",
 ];
 
 describe("AvalancheProdExample", function () {
@@ -20,6 +21,7 @@ describe("AvalancheProdExample", function () {
       dataServiceId: "redstone-avalanche-prod",
       uniqueSignersCount: 3,
       dataFeeds: ["AVAX"],
+      // disablePayloadsDryRun: true
     }, redstoneCacheLayerUrls);
 
     // Interact with the contract (getting oracle value securely)
