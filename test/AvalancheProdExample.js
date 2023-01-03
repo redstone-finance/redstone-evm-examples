@@ -2,9 +2,7 @@ const { formatBytes32String } = require("ethers/lib/utils");
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
 
 const redstoneCacheLayerUrls = [
-  "https://cache-service-direct-1.a.redstone.finance",
-  "https://cache-service-direct-2.a.redstone.finance",
-  "https://cache-service-streamr-1.a.redstone.finance",
+  "https://d32pw949n3kmfs.cloudfront.net"
 ];
 
 describe("AvalancheProdExample", function () {
