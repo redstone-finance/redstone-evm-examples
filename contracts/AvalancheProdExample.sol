@@ -6,9 +6,8 @@ import "hardhat/console.sol";
 import "@redstone-finance/evm-connector/contracts/data-services/AvalancheDataServiceConsumerBase.sol";
 
 contract AvalancheProdExample is AvalancheDataServiceConsumerBase {
-  // TODO: remove
   function getUniqueSignersThreshold() public view virtual override returns (uint8) {
-    return 3;
+    return 5;
   }
 
   /**
