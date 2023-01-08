@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@redstone-finance/evm-connector": "^0.0.16",
-    "redstone-protocol": "^1.0.2",
+    "redstone-protocol": "^1.0.5",
     "redstone-sdk": "^1.0.5"
   }
 }
