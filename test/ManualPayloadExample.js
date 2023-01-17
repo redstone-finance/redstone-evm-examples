@@ -12,15 +12,16 @@ describe("ManualPayloadExample", function () {
   });
 
   it("Get STX price securely using manually built redstone payload", async function () {
-    const signedDataPackagesResponse = await sdk.requestRedstonePayload({
-      dataServiceId: "redstone-main-demo",
-      uniqueSignersCount: 1,
-      dataFeeds: ["STX"],
-    }, ["https://d33trozg86ya9x.cloudfront.net"]);
-
     const unsignedMetadata = "manual-payload";
-    const redstonePayload = protocol.RedstonePayload.prepare(
-      signedDataPackagesResponse.STX, unsignedMetadata);
+    const redstonePayload = await sdk.requestRedstonePayload(
+      {
+        dataServiceId: "redstone-main-demo",
+        uniqueSignersCount: 1,
+        dataFeeds: ["STX"],
+      },
+      ["https://d33trozg86ya9x.cloudfront.net"],
+      unsignedMetadata
+    );
 
     // Interact with the contract (getting oracle value securely)
     const stxPrice = await contract.getLatestPrice(
