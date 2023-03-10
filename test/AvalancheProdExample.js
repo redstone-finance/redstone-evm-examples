@@ -1,5 +1,7 @@
 const { formatBytes32String } = require("ethers/lib/utils");
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
+const { REDSTONE_MARKER_HEX } = require("redstone-protocol/dist/src/common/redstone-constants");
+const { expect } = require("chai");
 
 const redstoneCacheLayerUrls = [
   "https://oracle-gateway-1.a.redstone.finance",
@@ -62,4 +64,17 @@ describe("AvalancheProdExample", function () {
     const prices = await wrappedContract.getLatestPricesForManyAssetsWithDuplicates(ids);
     console.log(prices);
   });
+
+  it("Should populate transaction", async () => {
+    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
+      dataServiceId: "redstone-avalanche-prod",
+      uniqueSignersCount: 3,
+    }, redstoneCacheLayerUrls);
+    const ids = ["AVAX", "ETH", "PNG"].map(dataFeedId => formatBytes32String(dataFeedId));
+    const tx = await wrappedContract.populateTransaction.getLatestPricesForManyAssets(ids);
+    const redstoneMarker = REDSTONE_MARKER_HEX.replace("0x", "");
+    expect(tx.data)
+      .to.be.a("string")
+      .and.satisfy((str) => str.endsWith(redstoneMarker));
+  })
 });
