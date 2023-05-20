@@ -13,4 +13,8 @@ contract MainExample is MainDemoConsumerBase {
     bytes32 dataFeedId = bytes32("STX");
     return getOracleNumericValueFromTxMsg(dataFeedId);
   }
+
+  function getLatestValueForDataFeed(bytes32 dataFeedId) public view returns (uint256) {
+    return getOracleNumericValueFromTxMsg(dataFeedId);
+  }
 }

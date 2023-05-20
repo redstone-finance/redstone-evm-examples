@@ -1,4 +1,5 @@
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
+const { formatBytes32String } = require("ethers/lib/utils");
 
 describe("MainExample", function () {
   let contract;
@@ -20,5 +21,21 @@ describe("MainExample", function () {
     // Interact with the contract (getting oracle value securely)
     const stxPrice = await wrappedContract.getLatestStxPrice();
     console.log({ stxPrice });
+  });
+
+
+  it("Get SOFR_EFFECTIVE_DATE (decimals: 0)", async function () {
+    // Wrapping the contract
+    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
+      dataServiceId: "redstone-main-demo",
+      uniqueSignersCount: 1,
+      dataFeeds: ["SOFR_EFFECTIVE_DATE"],
+    }, ["https://d33trozg86ya9x.cloudfront.net"]);
+
+    // Interact with the contract (getting oracle value securely)
+    const sofrEffectiveDate = await wrappedContract.getLatestValueForDataFeed(
+      formatBytes32String("SOFR_EFFECTIVE_DATE")
+    );
+    console.log({ sofrEffectiveDate });
   });
 });
