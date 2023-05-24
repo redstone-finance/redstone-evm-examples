@@ -12,10 +12,8 @@ describe("TwapsExample", function () {
   it("Get ETH TWAP price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataServiceId: "redstone-twaps-demo",
-      uniqueSignersCount: 1,
       dataFeeds: ["ETH-TWAP-60"],
-    }, ["https://d33trozg86ya9x.cloudfront.net"]);
+    });
 
     // Interact with the contract (getting oracle value securely)
     const ethTwapPriceFromContract = await wrappedContract.getTwapEthPrice();

@@ -20,11 +20,44 @@ describe("AvalancheProdExample", function () {
   it("Get AVAX price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataServiceId: "redstone-avalanche-prod",
-      uniqueSignersCount: 3,
       dataFeeds: ["AVAX"],
-      // disablePayloadsDryRun: true
-    }, redstoneCacheLayerUrls);
+    });
+
+    // Interact with the contract (getting oracle value securely)
+    const avaxPriceFromContract = await wrappedContract.getLatestAvaxPrice();
+    console.log({ avaxPriceFromContract });
+  });
+
+  it("Get AVAX price securely with custom urls", async function () {
+    // Wrapping the contract
+    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
+      dataFeeds: ["AVAX"],
+      urls: redstoneCacheLayerUrls
+    });
+
+    // Interact with the contract (getting oracle value securely)
+    const avaxPriceFromContract = await wrappedContract.getLatestAvaxPrice();
+    console.log({ avaxPriceFromContract });
+  });
+
+  it("Get AVAX price securely with custom unique signers count", async function () {
+    // Wrapping the contract
+    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
+      dataFeeds: ["AVAX"],
+      uniqueSignersCount: 4,
+    });
+
+    // Interact with the contract (getting oracle value securely)
+    const avaxPriceFromContract = await wrappedContract.getLatestAvaxPrice();
+    console.log({ avaxPriceFromContract });
+  });
+
+  it("Get AVAX price securely with custom data-service-id", async function () {
+    // Wrapping the contract
+    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
+      dataFeeds: ["AVAX"],
+      dataServiceId: "redstone-avalanche-prod"
+    });
 
     // Interact with the contract (getting oracle value securely)
     const avaxPriceFromContract = await wrappedContract.getLatestAvaxPrice();
@@ -34,10 +67,8 @@ describe("AvalancheProdExample", function () {
   it("Get price for AVAX, ETH, and PNG in the same call (several data feeds specified)", async () => {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataServiceId: "redstone-avalanche-prod",
-      uniqueSignersCount: 3,
       dataFeeds: ["AVAX", "ETH", "PNG"],
-    }, redstoneCacheLayerUrls);
+    });
     const ids = ["AVAX", "ETH", "PNG"].map(dataFeedId => formatBytes32String(dataFeedId));
     const prices = await wrappedContract.getLatestPricesForManyAssets(ids);
     console.log(prices);
@@ -45,10 +76,7 @@ describe("AvalancheProdExample", function () {
 
   it("Get price for AVAX, ETH, and PNG in the same call (no data feeds specified)", async () => {
     // Wrapping the contract
-    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataServiceId: "redstone-avalanche-prod",
-      uniqueSignersCount: 3,
-    }, redstoneCacheLayerUrls);
+    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({});
     const ids = ["AVAX", "ETH", "PNG"].map(dataFeedId => formatBytes32String(dataFeedId));
     const prices = await wrappedContract.getLatestPricesForManyAssets(ids);
     console.log(prices);
@@ -56,20 +84,14 @@ describe("AvalancheProdExample", function () {
 
   it("Get price for AVAX, ETH, and PNG in the same call (with dupliates)", async () => {
     // Wrapping the contract
-    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataServiceId: "redstone-avalanche-prod",
-      uniqueSignersCount: 3,
-    }, redstoneCacheLayerUrls);
+    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({});
     const ids = ["AVAX", "ETH", "PNG", "ETH", "ETH", "PNG"].map(dataFeedId => formatBytes32String(dataFeedId));
     const prices = await wrappedContract.getLatestPricesForManyAssetsWithDuplicates(ids);
     console.log(prices);
   });
 
   it("Should populate transaction", async () => {
-    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataServiceId: "redstone-avalanche-prod",
-      uniqueSignersCount: 3,
-    }, redstoneCacheLayerUrls);
+    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({});
     const ids = ["AVAX", "ETH", "PNG"].map(dataFeedId => formatBytes32String(dataFeedId));
     const tx = await wrappedContract.populateTransaction.getLatestPricesForManyAssets(ids);
     const redstoneMarker = REDSTONE_MARKER_HEX.replace("0x", "");

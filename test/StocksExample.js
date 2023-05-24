@@ -12,10 +12,8 @@ describe("StocksExample", function () {
   it("Get TSLA price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataServiceId: "redstone-stocks-demo",
-      uniqueSignersCount: 1,
       dataFeeds: ["TSLA"],
-    }, ["https://d33trozg86ya9x.cloudfront.net"]);
+    });
 
     // Interact with the contract (getting oracle value securely)
     const tslaPriceFromContract = await wrappedContract.getLatestTslaPrice();
