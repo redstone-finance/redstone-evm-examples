@@ -12,10 +12,8 @@ describe("RapidExample", function () {
   it("Get ETH price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataServiceId: "redstone-rapid-demo",
-      uniqueSignersCount: 1,
       dataFeeds: ["ETH"],
-    }, ["https://d33trozg86ya9x.cloudfront.net"]);
+    });
 
     // Interact with the contract (getting oracle value securely)
     const ethPriceFromContract = await wrappedContract.getLatestEthPrice();

@@ -12,10 +12,8 @@ describe("ExamplePseudoRandom", function () {
   it("Build random NFT indexes", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataServiceId: "redstone-main-demo",
-      uniqueSignersCount: 1,
       dataFeeds: ["ENTROPY"],
-    }, ["https://d33trozg86ya9x.cloudfront.net"]);
+    });
 
     // Interact with the contract (getting oracle value securely)
     const generateManyRandomNumbersTx = await wrappedContract.generateManyRandomNumbers(10, 10);

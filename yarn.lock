@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@chainlink/contracts@^0.6.0":
+"@chainlink/contracts@^0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@chainlink/contracts/-/contracts-0.6.1.tgz#8842b57e755793cbdbcbc45277fb5d179c993e19"
   integrity sha512-EuwijGexttw0UjfrW+HygwhQIrGAbqpf1ue28R55HhWMHBzphEH0PhWm8DQmFfj5OZNy8Io66N4L0nStkZ3QKQ==
@@ -721,17 +721,15 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.3.3.tgz#ff6ee919fc2a1abaf72b22814bfb72ed129ec137"
   integrity sha512-tDBopO1c98Yk7Cv/PZlHqrvtVjlgK5R4J6jxLwoO7qxK4xqOiZG+zSkIvGFpPZ0ikc3QOED3plgdqjgNTnBc7g==
 
-"@redstone-finance/evm-connector@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.0.22.tgz#a6c27fa7932ab9e694bda732e6312035353d1632"
-  integrity sha512-Gx6xEWTGQdyFIv1JBS2CWWpEhZJRZZCKlC6Lxy8PiIQsZLBjppZ37ljJLb/BtYfb9NwCOKrLF45FAS1i8W7bNg==
+"@redstone-finance/evm-connector@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.1.0.tgz#4fef3312bac98ce72d685cec71e955a7e6dc1522"
+  integrity sha512-1JmHagppQAiAomlw85Nk9Qmdyw+pkoiz0uPpZ498a/jFZf5OGZ8L1uzfcV79vY3qJFcwrmKjYW9J2o0QFfDmSA==
   dependencies:
-    "@chainlink/contracts" "^0.6.0"
+    "@chainlink/contracts" "^0.6.1"
     "@openzeppelin/contracts" "^4.7.3"
     axios "^1.1.3"
     ethers "^5.6.8"
-    redstone-protocol "1.0.5"
-    redstone-sdk "1.0.7"
 
 "@scure/base@~1.1.0":
   version "1.1.1"
@@ -3866,17 +3864,17 @@ redstone-protocol@*:
   dependencies:
     ethers "^5.6.8"
 
-redstone-protocol@1.0.5, redstone-protocol@^1.0.5:
+redstone-protocol@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/redstone-protocol/-/redstone-protocol-1.0.5.tgz#c8555e9a9e3ee49d11b6586bf7090e59404e3395"
   integrity sha512-62qHSb9jF5875a/gc8MbDcHH1n4dZsBXxlIxpk3vx/MeykAMB6nLd1174Qukvupkr69cneeRQiVqqALkQpmRlg==
   dependencies:
     ethers "^5.6.8"
 
-redstone-sdk@1.0.7, redstone-sdk@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/redstone-sdk/-/redstone-sdk-1.0.7.tgz#ca03b81db77d60a4d75b7bf4c90ed7fb7bac00cd"
-  integrity sha512-pjSNWLoWvaol73kJO58YHqy3VUfDN2hMTeQW4wccQAPWY2OhnM7Ody9TL8l2DxXgXMAUscuqVRHBmUNjT3Q2rw==
+redstone-sdk@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/redstone-sdk/-/redstone-sdk-1.1.0.tgz#9ba48bb41e12e0d4a305506aef280e632e88e437"
+  integrity sha512-4dYgaIAb+iJ2RK2d/r/hqa2S1VC1JpZGqCtNqYoV3wjKITP9Nl1UKh9Ho7YBXY+/q6Hwx8/NQo/1kxcilxIfrg==
   dependencies:
     axios "^0.27.2"
     redstone-oracles-smartweave-contracts "*"

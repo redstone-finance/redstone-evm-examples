@@ -1,5 +1,4 @@
 const sdk = require("redstone-sdk");
-const protocol = require("redstone-protocol");
 const { convertStringToBytes32 } = require("redstone-protocol/dist/src/common/utils");
 
 describe("ManualPayloadExample", function () {
@@ -18,8 +17,8 @@ describe("ManualPayloadExample", function () {
         dataServiceId: "redstone-main-demo",
         uniqueSignersCount: 1,
         dataFeeds: ["STX"],
+        urls: ["https://d33trozg86ya9x.cloudfront.net"],
       },
-      ["https://d33trozg86ya9x.cloudfront.net"],
       unsignedMetadata
     );
 

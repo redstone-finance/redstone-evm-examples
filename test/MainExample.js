@@ -13,10 +13,8 @@ describe("MainExample", function () {
   it("Get STX price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataServiceId: "redstone-main-demo",
-      uniqueSignersCount: 1,
       dataFeeds: ["STX"],
-    }, ["https://d33trozg86ya9x.cloudfront.net"]);
+    });
 
     // Interact with the contract (getting oracle value securely)
     const stxPrice = await wrappedContract.getLatestStxPrice();
@@ -27,10 +25,8 @@ describe("MainExample", function () {
   it("Get SOFR_EFFECTIVE_DATE (decimals: 0)", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataServiceId: "redstone-main-demo",
-      uniqueSignersCount: 1,
       dataFeeds: ["SOFR_EFFECTIVE_DATE"],
-    }, ["https://d33trozg86ya9x.cloudfront.net"]);
+    });
 
     // Interact with the contract (getting oracle value securely)
     const sofrEffectiveDate = await wrappedContract.getLatestValueForDataFeed(
