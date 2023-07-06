@@ -2,9 +2,9 @@
 
 pragma solidity ^0.8.4;
 
-import "@redstone-finance/evm-connector/contracts/data-services/PrimaryProdDataServiceConsumerBase.sol";
+import "@redstone-finance/evm-connector/contracts/data-services/PrimaryDemoDataServiceConsumerBase.sol";
 
-contract PrimaryProdExample is PrimaryProdDataServiceConsumerBase {
+contract PrimaryDemoExample is PrimaryDemoDataServiceConsumerBase {
   function getLatestPrice(bytes32 dataFeedId) public view returns (uint256) {
     return getOracleNumericValueFromTxMsg(dataFeedId);
   }
