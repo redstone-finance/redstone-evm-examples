@@ -17,4 +17,8 @@ contract MainExample is MainDemoConsumerBase {
   function getLatestValueForDataFeed(bytes32 dataFeedId) public view returns (uint256) {
     return getOracleNumericValueFromTxMsg(dataFeedId);
   }
+
+  function getLatestValueWithManualPayload(bytes32 dataFeedId, bytes calldata) public view returns (uint256) {
+    getLatestValueForDataFeed(dataFeedId);
+  }
 }

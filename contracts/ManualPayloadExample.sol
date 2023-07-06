@@ -3,46 +3,29 @@
 pragma solidity ^0.8.4;
 
 import "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol";
+import "./MainExample.sol";
 
 contract ManualPayloadExample is MainDemoConsumerBase {
-  function proxyRequestToBaseContract(bytes32 assetId) public view returns (uint256) {
-    return getOracleNumericValueFromTxMsg(assetId);
+  MainExample externalContract;
+
+  constructor() {
+    externalContract = new MainExample();
   }
 
   /**
    * Returns the latest price of the give asset
+   * Doesn't need to be called on a wrapped contract instance
+   * But requires to pass a valid manual payload
    */
-  function getLatestPrice(bytes calldata redstonePayload, bytes32 assetDataFeedId)
-    public
-    view
-    returns (uint256)
-  {
-    // Prepare call to RedStone base function
-    bytes memory encodedFunction = abi.encodeWithSignature(
-      "proxyRequestToBaseContract(bytes32)",
-      assetDataFeedId
-    );
-    bytes memory encodedFunctionWithRedstonePayload = abi.encodePacked(
-      encodedFunction,
-      redstonePayload
-    );
+  function getLatestPrice(bytes32 assetDataFeedId, bytes calldata) public view returns (uint256) {
+    return getOracleNumericValueFromTxMsg(assetDataFeedId);
+  }
 
-    // Securely getting oracle value
-    (bool success, bytes memory result) = address(this).staticcall(
-      encodedFunctionWithRedstonePayload
-    );
-
-    // Parsing response
-    uint256 priceValue;
-    if (!success) {
-      assembly {
-        revert(add(32, result), mload(result))
-      }
-    }
-    assembly {
-      priceValue := mload(add(result, 32))
-    }
-
-    return priceValue;
+  // Extracting oracle data in another contract
+  function getLatestPriceFromAnotherContract(
+    bytes32 assetDataFeedId,
+    bytes calldata payload
+  ) public view returns (uint256) {
+    return externalContract.getLatestValueWithManualPayload(assetDataFeedId, payload);
   }
 }
