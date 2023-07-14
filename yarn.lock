@@ -727,10 +727,10 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.3.3.tgz#ff6ee919fc2a1abaf72b22814bfb72ed129ec137"
   integrity sha512-tDBopO1c98Yk7Cv/PZlHqrvtVjlgK5R4J6jxLwoO7qxK4xqOiZG+zSkIvGFpPZ0ikc3QOED3plgdqjgNTnBc7g==
 
-"@redstone-finance/evm-connector@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.2.2.tgz#e989f2037db4a3dfca455ea29275d0eea538612c"
-  integrity sha512-1e6ZedZyTmtiaU2/QXscoNuq8LZPridvfWfti8C0ZqSn8Uptf2NZhiOrD4ApOVr5LvOSHvgfEnRaS3iW9VJBLA==
+"@redstone-finance/evm-connector@0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.2.3.tgz#82bd4f9d3d9b77b4eb29f53bfb5f839a46cbb1a6"
+  integrity sha512-BihRZykOtIPRB5VnoyBpqdXBwU+eBFTHDgpaBsnDQ739deyJGTSdoCMSx5tFT+zegVicVB+kIXEiS5bN/zCylg==
   dependencies:
     "@chainlink/contracts" "^0.6.1"
     "@openzeppelin/contracts" "^4.7.3"
