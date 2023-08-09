@@ -270,7 +270,7 @@
   dependencies:
     "@ethersproject/logger" "^5.7.0"
 
-"@ethersproject/providers@5.7.2", "@ethersproject/providers@^5.4.7", "@ethersproject/providers@^5.7.0", "@ethersproject/providers@^5.7.1", "@ethersproject/providers@^5.7.2":
+"@ethersproject/providers@5.7.2", "@ethersproject/providers@^5.0.10", "@ethersproject/providers@^5.4.7", "@ethersproject/providers@^5.7.0", "@ethersproject/providers@^5.7.1", "@ethersproject/providers@^5.7.2":
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/@ethersproject/providers/-/providers-5.7.2.tgz#f8b1a4f275d7ce58cf0a2eec222269a08beb18cb"
   integrity sha512-g34EWZ1WWAVgr4aptGlVBF8mhl3VWjv+8hoAnzStu8Ah22VHBsuGzP17eb6xDVRzw895G4W7vvx60lFFur/1Rg==
@@ -727,17 +727,17 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.3.3.tgz#ff6ee919fc2a1abaf72b22814bfb72ed129ec137"
   integrity sha512-tDBopO1c98Yk7Cv/PZlHqrvtVjlgK5R4J6jxLwoO7qxK4xqOiZG+zSkIvGFpPZ0ikc3QOED3plgdqjgNTnBc7g==
 
-"@redstone-finance/evm-connector@0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.2.3.tgz#82bd4f9d3d9b77b4eb29f53bfb5f839a46cbb1a6"
-  integrity sha512-BihRZykOtIPRB5VnoyBpqdXBwU+eBFTHDgpaBsnDQ739deyJGTSdoCMSx5tFT+zegVicVB+kIXEiS5bN/zCylg==
+"@redstone-finance/evm-connector@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.2.4.tgz#0d34fa4a8d8808d585298a5edca3672c3f4c2c87"
+  integrity sha512-nTUV3Z0ZwH3AUpSU4LIqTxydLN1KyyYOlwTOX2qjal75NZImSqtd3x4HN59uNGAlcQOvlg9w/kP2KENdcpRvpg==
   dependencies:
     "@chainlink/contracts" "^0.6.1"
     "@openzeppelin/contracts" "^4.7.3"
     axios "^1.1.3"
     ethers "^5.6.8"
     redstone-protocol "^1.0.5"
-    redstone-sdk "^1.3.0"
+    redstone-sdk "^1.5.0"
 
 "@scure/base@~1.1.0":
   version "1.1.1"
@@ -1740,6 +1740,11 @@ decamelize@^4.0.0:
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-4.0.0.tgz#aa472d7bf660eb15f3494efd531cab7f2a709837"
   integrity sha512-9iE1PgSik9HeIIw2JO94IidnE3eBoQrFJ3w7sFuzSX4DpmZ3v5sZpUiV5Swcf6mQEF+Y0ru8Neo+p+nyh2J+hQ==
 
+decimal.js@^10.4.3:
+  version "10.4.3"
+  resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-10.4.3.tgz#1044092884d245d1b7f65725fa4ad4c6f781cc23"
+  integrity sha512-VBBaLc1MgL5XpzgIP7ny5Z6Nx3UrRkIViUkPUdtl9aya5amy3De1gsUUSB1g3+3sExYNjCAsAznmukyxCb1GRA==
+
 deep-eql@^4.0.1, deep-eql@^4.1.2:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/deep-eql/-/deep-eql-4.1.3.tgz#7c7775513092f7df98d8df9996dd085eb668cc6d"
@@ -2019,6 +2024,14 @@ ethereum-cryptography@^1.0.3:
     "@scure/bip32" "1.1.5"
     "@scure/bip39" "1.1.1"
 
+ethereum-multicall@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/ethereum-multicall/-/ethereum-multicall-2.19.0.tgz#28462bf48792bf7bb0b2db1ca546f439b2adab96"
+  integrity sha512-ECMxdf1ffxBWTCLeAzEGGWUYNdlNq4zXPj/ZPXdaixbx/qZ/gw4ongwpuR5UGy6D5epWDftvFvIAEzmkwGZ1lQ==
+  dependencies:
+    "@ethersproject/providers" "^5.0.10"
+    ethers "^5.0.15"
+
 ethereumjs-abi@^0.6.8:
   version "0.6.8"
   resolved "https://registry.yarnpkg.com/ethereumjs-abi/-/ethereumjs-abi-0.6.8.tgz#71bc152db099f70e62f108b7cdfca1b362c6fcae"
@@ -2066,7 +2079,7 @@ ethers@^4.0.40:
     uuid "2.0.1"
     xmlhttprequest "1.8.0"
 
-ethers@^5.4.7, ethers@^5.6.8, ethers@^5.7.1:
+ethers@^5.0.15, ethers@^5.4.7, ethers@^5.6.8, ethers@^5.6.9, ethers@^5.7.1, ethers@^5.7.2:
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/ethers/-/ethers-5.7.2.tgz#3a7deeabbb8c030d4126b24f84e525466145872e"
   integrity sha512-wswUsmWo1aOK8rR7DIKiWSw9DbLWe6x98Jrn8wcTflTVvaXhAMaB5zGAXy0GYQEQp9iO1iSHWVyARQm11zUtyg==
@@ -3871,6 +3884,11 @@ redstone-oracles-smartweave-contracts@*:
   resolved "https://registry.yarnpkg.com/redstone-oracles-smartweave-contracts/-/redstone-oracles-smartweave-contracts-1.0.5.tgz#afe087281c3dae581289726ee9d0101309e93ec9"
   integrity sha512-Uf7hENYAJ+w8yJS1dm4uRXI7/GUiA3ncvFFIo1i9x+vP4FpQ9RlxZFf3Xg2LMnGmz/j1ITBRsM3FAQdSRkTuxA==
 
+redstone-oracles-smartweave-contracts@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/redstone-oracles-smartweave-contracts/-/redstone-oracles-smartweave-contracts-1.0.6.tgz#aa7b6ec453133be240df6cb4fe52a11582cb65b7"
+  integrity sha512-QTGDhkSJyVxggFVaET9EiuwTjdiyNjqWmVNE/jyd8OAESvVtrclLuhQL9bIVlJhVXq6IroyWf0rs8eh/OEG/4Q==
+
 redstone-protocol@*, redstone-protocol@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/redstone-protocol/-/redstone-protocol-1.0.5.tgz#c8555e9a9e3ee49d11b6586bf7090e59404e3395"
@@ -3878,23 +3896,25 @@ redstone-protocol@*, redstone-protocol@^1.0.5:
   dependencies:
     ethers "^5.6.8"
 
-redstone-sdk@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/redstone-sdk/-/redstone-sdk-1.1.0.tgz#9ba48bb41e12e0d4a305506aef280e632e88e437"
-  integrity sha512-4dYgaIAb+iJ2RK2d/r/hqa2S1VC1JpZGqCtNqYoV3wjKITP9Nl1UKh9Ho7YBXY+/q6Hwx8/NQo/1kxcilxIfrg==
+redstone-sdk@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/redstone-sdk/-/redstone-sdk-1.5.0.tgz#e70379dc4d252b6102b2202b0b7ba6139b9ed5ac"
+  integrity sha512-j+c2Ngk7tRF+EeYh6f53t6HbdRkZTc4t369HnSk/q4gSIBGYLkAq5ujI3EnUdxne/FQzS9L12Nml+hc31gzIHw==
   dependencies:
     axios "^0.27.2"
+    ethers "^5.7.2"
     redstone-oracles-smartweave-contracts "*"
     redstone-protocol "*"
+    redstone-utils "*"
 
-redstone-sdk@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/redstone-sdk/-/redstone-sdk-1.3.0.tgz#4e46ad0e770e3e5e8b64d94145d8cf5e0041520a"
-  integrity sha512-e/kn5xZPL58/0i/ZEnrBylBnfnVztnlvGeeWaU47zYbAjpSc8P3mbj69h3P1OH84Ob9u3LOfB33vBlgRxYKQng==
+redstone-utils@*:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/redstone-utils/-/redstone-utils-0.0.1.tgz#d012f3a3db0c243e596a52874a3196088a88be23"
+  integrity sha512-tIDWU8mKdDUqOKpup+5U1FjNRp6EigyCHzBtaVB59CHS1D8uUe9j+H6tm4RtnuL6YQojOY57ZV2R4L1jdAwrRA==
   dependencies:
-    axios "^0.27.2"
-    redstone-oracles-smartweave-contracts "*"
-    redstone-protocol "*"
+    decimal.js "^10.4.3"
+    ethereum-multicall "^2.19.0"
+    ethers "^5.6.9"
 
 reduce-flatten@^2.0.0:
   version "2.0.0"
