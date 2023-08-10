@@ -727,17 +727,17 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.3.3.tgz#ff6ee919fc2a1abaf72b22814bfb72ed129ec137"
   integrity sha512-tDBopO1c98Yk7Cv/PZlHqrvtVjlgK5R4J6jxLwoO7qxK4xqOiZG+zSkIvGFpPZ0ikc3QOED3plgdqjgNTnBc7g==
 
-"@redstone-finance/evm-connector@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.2.4.tgz#0d34fa4a8d8808d585298a5edca3672c3f4c2c87"
-  integrity sha512-nTUV3Z0ZwH3AUpSU4LIqTxydLN1KyyYOlwTOX2qjal75NZImSqtd3x4HN59uNGAlcQOvlg9w/kP2KENdcpRvpg==
+"@redstone-finance/evm-connector@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.2.5.tgz#8d3b64cd068dea73a9f2287c91672dfb652a4725"
+  integrity sha512-JjMJVXbgmvmbKleIwzMOKu10mDXTABVoYmmfErF2M7M6pftPiKFIVH16gycU93aQVZeRQ74rieQ55Q691xPS8Q==
   dependencies:
     "@chainlink/contracts" "^0.6.1"
     "@openzeppelin/contracts" "^4.7.3"
     axios "^1.1.3"
     ethers "^5.6.8"
     redstone-protocol "^1.0.5"
-    redstone-sdk "^1.5.0"
+    redstone-sdk "^1.6.1"
 
 "@scure/base@~1.1.0":
   version "1.1.1"
@@ -3896,10 +3896,10 @@ redstone-protocol@*, redstone-protocol@^1.0.5:
   dependencies:
     ethers "^5.6.8"
 
-redstone-sdk@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/redstone-sdk/-/redstone-sdk-1.5.0.tgz#e70379dc4d252b6102b2202b0b7ba6139b9ed5ac"
-  integrity sha512-j+c2Ngk7tRF+EeYh6f53t6HbdRkZTc4t369HnSk/q4gSIBGYLkAq5ujI3EnUdxne/FQzS9L12Nml+hc31gzIHw==
+redstone-sdk@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/redstone-sdk/-/redstone-sdk-1.6.1.tgz#421f163f75ac539b663eb3c70c86986437789396"
+  integrity sha512-SgeRKXdVsN6dpPH3M7CeebVvfX/ClzVKTelrVViBCHCpFqwYNDaSWhBh08DdGteo4ab/7EIRETvkoqfAUsDTnw==
   dependencies:
     axios "^0.27.2"
     ethers "^5.7.2"

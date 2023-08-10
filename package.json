@@ -27,9 +27,9 @@
     "typechain": "^8.1.0"
   },
   "dependencies": {
-    "@redstone-finance/evm-connector": "^0.2.4",
+    "@redstone-finance/evm-connector": "^0.2.5",
     "redstone-oracles-smartweave-contracts": "^1.0.6",
     "redstone-protocol": "^1.0.5",
-    "redstone-sdk": "^1.5.0"
+    "redstone-sdk": "^1.6.1"
   }
 }
