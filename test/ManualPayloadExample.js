@@ -1,10 +1,10 @@
-const sdk = require("redstone-sdk");
+const sdk = require("@redstone-finance/sdk");
 const {
   DataPackagesWrapper,
 } = require("@redstone-finance/evm-connector/dist/src/wrappers/DataPackagesWrapper");
 const {
   convertStringToBytes32,
-} = require("redstone-protocol/dist/src/common/utils");
+} = require("@redstone-finance/protocol/dist/src/common/utils");
 const {
   DataServiceWrapper,
 } = require("@redstone-finance/evm-connector/dist/src/wrappers/DataServiceWrapper");

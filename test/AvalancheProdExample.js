@@ -1,6 +1,6 @@
 const { formatBytes32String } = require("ethers/lib/utils");
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
-const { REDSTONE_MARKER_HEX } = require("redstone-protocol/dist/src/common/redstone-constants");
+const { REDSTONE_MARKER_HEX } = require("@redstone-finance/protocol/dist/src/common/redstone-constants");
 const { expect } = require("chai");
 
 const redstoneCacheLayerUrls = [
