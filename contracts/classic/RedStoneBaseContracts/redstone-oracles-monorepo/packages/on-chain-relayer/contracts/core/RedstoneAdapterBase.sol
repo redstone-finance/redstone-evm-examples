@@ -224,7 +224,7 @@ abstract contract RedstoneAdapterBase is RedstoneConsumerNumericBase, IRedstoneA
   function _preventUpdateWithOlderDataPackages(uint256 dataPackagesTimestamp) internal view {
     uint256 dataTimestampFromLatestUpdate = getDataTimestampFromLatestUpdate();
 
-    // Note! This code below has been changed specifically for the Gelto Use case
+    // Note! This code below has been changed specifically for the Tangible Use case
 
     // original code
     // if (dataPackagesTimestamp <= dataTimestampFromLatestUpdate) {
