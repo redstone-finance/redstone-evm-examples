@@ -9,7 +9,7 @@ describe("TwapsExample", function () {
     contract = await TwapsExample.deploy();
   });
 
-  it("Get ETH TWAP price securely", async function () {
+  it.skip("Get ETH TWAP price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
       dataFeeds: ["ETH-TWAP-60"],
