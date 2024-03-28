@@ -772,7 +772,7 @@
 
 "@redstone-finance/oracles-monorepo@https://github.com/redstone-finance/redstone-oracles-monorepo":
   version "0.0.2"
-  resolved "https://github.com/redstone-finance/redstone-oracles-monorepo#e3564b91c8246cd9ffbbf12e8d63ba05a535fa3e"
+  resolved "https://github.com/redstone-finance/redstone-oracles-monorepo#6ce4776f73986fe584e4500cf68996ee7dbe84aa"
 
 "@redstone-finance/oracles-smartweave-contracts@^0.3.6":
   version "0.3.6"
