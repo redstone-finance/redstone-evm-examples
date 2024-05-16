@@ -678,15 +678,15 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.3.3.tgz#ff6ee919fc2a1abaf72b22814bfb72ed129ec137"
   integrity sha512-tDBopO1c98Yk7Cv/PZlHqrvtVjlgK5R4J6jxLwoO7qxK4xqOiZG+zSkIvGFpPZ0ikc3QOED3plgdqjgNTnBc7g==
 
-"@redstone-finance/evm-connector@^0.5.0-alpha.0":
-  version "0.5.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.5.0-alpha.0.tgz#8bad7e505756653cfa345cf281749f7d82d272bf"
-  integrity sha512-eWF2CbljtI+qAHrv0vYYDxInWlLn1ZXRH/+N1MU1zMHuWzXjSwKhhNYM7mAkNaW0/U8CW8XXWaRWvZvhRzTsXA==
+"@redstone-finance/evm-connector@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.5.1.tgz#ccfb3b89e9f37b9fe4b3406ac97d8f4e0478336b"
+  integrity sha512-CJT31kyCRVccAni/VGoZ6HsY3PtydwYDhv/Y6Ydm0jbAG8hO1tz8+b+YQl8H4WuTRRfLVMBkwncev8qV76Szqg==
   dependencies:
     "@chainlink/contracts" "^0.6.1"
     "@openzeppelin/contracts" "^4.8.1"
-    "@redstone-finance/protocol" "^0.5.0-alpha.0"
-    "@redstone-finance/sdk" "^0.5.0-alpha.0"
+    "@redstone-finance/protocol" "^0.5.1"
+    "@redstone-finance/sdk" "^0.5.1"
     axios "^1.6.2"
     ethers "^5.7.2"
 
@@ -694,33 +694,33 @@
   version "0.0.2"
   resolved "https://github.com/redstone-finance/redstone-oracles-monorepo#6ce4776f73986fe584e4500cf68996ee7dbe84aa"
 
-"@redstone-finance/oracles-smartweave-contracts@^0.5.0-alpha.0":
-  version "0.5.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/oracles-smartweave-contracts/-/oracles-smartweave-contracts-0.5.0-alpha.0.tgz#05e2cc42838ed9d41fafce109e0a84f2b8f1ca11"
-  integrity sha512-cKsi9Uexy6UZlQl8uXuj7Q+6BZT6muZqr+xPUkp676OKjzyHoLTPZrH22Lh235BTCUsOasVru3bqTmvujoEBcg==
+"@redstone-finance/oracles-smartweave-contracts@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/oracles-smartweave-contracts/-/oracles-smartweave-contracts-0.5.1.tgz#fa68f76fb9258e4f037cde4f03b0ad87e8a8e8a2"
+  integrity sha512-1FwvgRzuAbQyLpeY9WJqViEp2mB3mNJWO78ogjGgCXGNeXsODoUTBWHRpS0GHpWoW8UKR+MC/t0ZSB+E0XsHCA==
 
-"@redstone-finance/protocol@^0.5.0-alpha.0":
-  version "0.5.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/protocol/-/protocol-0.5.0-alpha.0.tgz#c9e07f557d2e28aaf50d5cbe7ce9ab88b1869f98"
-  integrity sha512-MNGUdl/6oqjCA9ap7TDMQdpol/zwVs5Ub0xnu8jlUszcgVuxS5l+crK0xcLY8HWZ0pCd7p5VY6w8tHidpkfiAg==
+"@redstone-finance/protocol@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/protocol/-/protocol-0.5.1.tgz#6fc47001ee386157a989d95c26dea6f2152b3422"
+  integrity sha512-MJ8BYuQ34xakfD7SA2OidtrLKDm5J5bZLrWZlsYj8hBs14h/vpFQsdbYJGbiIrN17aIb0c7rST0Q314T30BzJg==
   dependencies:
     ethers "^5.7.2"
 
-"@redstone-finance/sdk@^0.5.0-alpha.0":
-  version "0.5.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/sdk/-/sdk-0.5.0-alpha.0.tgz#dbbeae62dd92c9e07f4ed47ac380c85112d5b5f5"
-  integrity sha512-rk7LFMK2jRp86D5JrfoEsuljRqF002aqkoR2Lp/Hsjm5KDc0JwF91Sb7urkCqOgv2zYejId5sqr8EkX98z1jBg==
+"@redstone-finance/sdk@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/sdk/-/sdk-0.5.1.tgz#3676bf4ffce2081b841367f9c98c42651684a226"
+  integrity sha512-ElJioHHwJWSRUJqcOV+Iog6b501veZ5/QarfxPMaGGne6ZRKlXGDuj8dDglIZvkXwwSN2j6nCcU5km2RHdLN/Q==
   dependencies:
-    "@redstone-finance/oracles-smartweave-contracts" "^0.5.0-alpha.0"
-    "@redstone-finance/protocol" "^0.5.0-alpha.0"
-    "@redstone-finance/utils" "^0.5.0-alpha.0"
+    "@redstone-finance/oracles-smartweave-contracts" "^0.5.1"
+    "@redstone-finance/protocol" "^0.5.1"
+    "@redstone-finance/utils" "^0.5.1"
     axios "^1.6.2"
     ethers "^5.7.2"
 
-"@redstone-finance/utils@^0.5.0-alpha.0":
-  version "0.5.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/utils/-/utils-0.5.0-alpha.0.tgz#90481cefe49463212fe49df13f1327ee343110e0"
-  integrity sha512-4reFpWb1wSYRS5yPoZdby1dAyoGloVftt+3lr9nPrw6WcpMYew4xpFlkqrIov/35C/pi+/hJWpdd/aofvKMd+w==
+"@redstone-finance/utils@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/utils/-/utils-0.5.1.tgz#f91ca100ce1a1c870892db40249aebabaa0e411a"
+  integrity sha512-ui8scibt3mnHC9FjLVxT2k0GrDjlptIvAvNDCRsxm0jL+uttLgMmEp0kZkZ62aWFtSS0ORNDN8cER43yNNWWmQ==
   dependencies:
     axios "^1.6.2"
     consola "^2.15.3"
