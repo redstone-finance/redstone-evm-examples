@@ -27,8 +27,8 @@
     "typechain": "^8.1.0"
   },
   "dependencies": {
-    "@redstone-finance/evm-connector": "^0.5.1",
+    "@redstone-finance/evm-connector": "^0.5.4",
     "@redstone-finance/oracles-monorepo": "https://github.com/redstone-finance/redstone-oracles-monorepo",
-    "@redstone-finance/sdk": "^0.5.1"
+    "@redstone-finance/sdk": "^0.5.4"
   }
 }

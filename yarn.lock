@@ -678,15 +678,15 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.3.3.tgz#ff6ee919fc2a1abaf72b22814bfb72ed129ec137"
   integrity sha512-tDBopO1c98Yk7Cv/PZlHqrvtVjlgK5R4J6jxLwoO7qxK4xqOiZG+zSkIvGFpPZ0ikc3QOED3plgdqjgNTnBc7g==
 
-"@redstone-finance/evm-connector@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.5.1.tgz#ccfb3b89e9f37b9fe4b3406ac97d8f4e0478336b"
-  integrity sha512-CJT31kyCRVccAni/VGoZ6HsY3PtydwYDhv/Y6Ydm0jbAG8hO1tz8+b+YQl8H4WuTRRfLVMBkwncev8qV76Szqg==
+"@redstone-finance/evm-connector@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/evm-connector/-/evm-connector-0.5.4.tgz#a70219463980d3b04a10a0c196ed7609b838f7e8"
+  integrity sha512-lkwtkpndLcpZsbZImxcSVArHrap94UYdzTZ5jyFL651F3KWaiiYSSup4UP1YzLG1zA/5rTpIcLULb0V12Y2OAg==
   dependencies:
     "@chainlink/contracts" "^0.6.1"
     "@openzeppelin/contracts" "^4.8.1"
-    "@redstone-finance/protocol" "^0.5.1"
-    "@redstone-finance/sdk" "^0.5.1"
+    "@redstone-finance/protocol" "^0.5.4"
+    "@redstone-finance/sdk" "^0.5.4"
     axios "^1.6.2"
     ethers "^5.7.2"
 
@@ -694,33 +694,35 @@
   version "0.0.2"
   resolved "https://github.com/redstone-finance/redstone-oracles-monorepo#6ce4776f73986fe584e4500cf68996ee7dbe84aa"
 
-"@redstone-finance/oracles-smartweave-contracts@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/oracles-smartweave-contracts/-/oracles-smartweave-contracts-0.5.1.tgz#fa68f76fb9258e4f037cde4f03b0ad87e8a8e8a2"
-  integrity sha512-1FwvgRzuAbQyLpeY9WJqViEp2mB3mNJWO78ogjGgCXGNeXsODoUTBWHRpS0GHpWoW8UKR+MC/t0ZSB+E0XsHCA==
+"@redstone-finance/oracles-smartweave-contracts@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/oracles-smartweave-contracts/-/oracles-smartweave-contracts-0.5.4.tgz#766e20143c28a789c9ab4fb5535498ab4a224740"
+  integrity sha512-CGKlEGGdLi4MGTyV7S0zAyGrrw7bTGlrO494xmmTXrFcCpoUWiAa4e3BULsGWA1csjOIGv3O8h31w8MYJuMkug==
 
-"@redstone-finance/protocol@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/protocol/-/protocol-0.5.1.tgz#6fc47001ee386157a989d95c26dea6f2152b3422"
-  integrity sha512-MJ8BYuQ34xakfD7SA2OidtrLKDm5J5bZLrWZlsYj8hBs14h/vpFQsdbYJGbiIrN17aIb0c7rST0Q314T30BzJg==
+"@redstone-finance/protocol@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/protocol/-/protocol-0.5.4.tgz#2e5a4f42c8a864ca6022b543ebcccdc9f0716c5d"
+  integrity sha512-gI1vfyNWIuHudfTCMxEvrM/aDqtjeEr2+Pdt6Er1zrhVl7Wca5rdIMKvg2iNPPzFezWqiz6kH2LbgRlog5tf6Q==
   dependencies:
     ethers "^5.7.2"
 
-"@redstone-finance/sdk@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/sdk/-/sdk-0.5.1.tgz#3676bf4ffce2081b841367f9c98c42651684a226"
-  integrity sha512-ElJioHHwJWSRUJqcOV+Iog6b501veZ5/QarfxPMaGGne6ZRKlXGDuj8dDglIZvkXwwSN2j6nCcU5km2RHdLN/Q==
+"@redstone-finance/sdk@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/sdk/-/sdk-0.5.4.tgz#a9e3ed77dd7d765964aa35d454fc44be57f01a45"
+  integrity sha512-BBibAwxPzOpBlS3VwR7fjk8XRwN+G2WHF7SVTCKReSnnyJMap/+mJFpZw02ld5YBlLIYhcrM7XgsS6qg0cv+Rg==
   dependencies:
-    "@redstone-finance/oracles-smartweave-contracts" "^0.5.1"
-    "@redstone-finance/protocol" "^0.5.1"
-    "@redstone-finance/utils" "^0.5.1"
+    "@redstone-finance/oracles-smartweave-contracts" "^0.5.4"
+    "@redstone-finance/protocol" "^0.5.4"
+    "@redstone-finance/utils" "^0.5.4"
+    "@types/lodash" "^4.14.195"
     axios "^1.6.2"
     ethers "^5.7.2"
+    lodash "^4.17.21"
 
-"@redstone-finance/utils@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@redstone-finance/utils/-/utils-0.5.1.tgz#f91ca100ce1a1c870892db40249aebabaa0e411a"
-  integrity sha512-ui8scibt3mnHC9FjLVxT2k0GrDjlptIvAvNDCRsxm0jL+uttLgMmEp0kZkZ62aWFtSS0ORNDN8cER43yNNWWmQ==
+"@redstone-finance/utils@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@redstone-finance/utils/-/utils-0.5.4.tgz#fee9f35eba97787fd67010ca08087de40da14e9d"
+  integrity sha512-7SOvMYucE388XiEKDbuRRp4WXFtYSsYaS5ByAYLN0oexBp/3uH/Wn7wa/Ebhrxz2ISUBsIc6xY8uemmJk1L7NA==
   dependencies:
     axios "^1.6.2"
     consola "^2.15.3"
@@ -914,6 +916,11 @@
   dependencies:
     "@types/minimatch" "*"
     "@types/node" "*"
+
+"@types/lodash@^4.14.195":
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.4.tgz#0303b64958ee070059e3a7184048a55159fe20b7"
+  integrity sha512-wYCP26ZLxaT3R39kiN2+HcJ4kTd3U1waI/cY7ivWYqFP6pW3ZNpvi6Wd6PHZx7T/t8z0vlkXMg3QYLa7DZ/IJQ==
 
 "@types/lru-cache@^5.1.0":
   version "5.1.1"
