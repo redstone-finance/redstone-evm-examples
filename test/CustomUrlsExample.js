@@ -1,6 +1,6 @@
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
 
-// Paused this example for now, since out custom URLs oracles
+// Paused this example for now, since our custom URLs oracles
 // Are not working properly
 describe.skip("CustomUrlsExample", function () {
   let contract;
