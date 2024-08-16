@@ -8,7 +8,7 @@ const getLatestSignedXAUTPrice = async () => {
   return await sdk.requestDataPackages({
     dataServiceId: "redstone-main-demo",
     uniqueSignersCount: 1,
-    dataFeeds: ["XAUT"],
+    dataPackagesIds: ["XAUT"],
     urls: ["https://oracle-gateway-1.b.redstone.finance"],
   });
 };

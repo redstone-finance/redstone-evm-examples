@@ -18,7 +18,7 @@ describe.skip("PrimaryDemoExample", function () {
     it("Get VST price securely", async function () {
         // Wrapping the contract
         const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-            dataFeeds: ["VST"],
+            dataPackagesIds: ["VST"],
             urls: redstoneCacheLayerUrls,
         });
 
@@ -30,7 +30,7 @@ describe.skip("PrimaryDemoExample", function () {
     it("Get SWETH price securely", async function () {
         // Wrapping the contract
         const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-            dataFeeds: ["SWETH"],
+            dataPackagesIds: ["SWETH"],
             urls: redstoneCacheLayerUrls,
         });
 

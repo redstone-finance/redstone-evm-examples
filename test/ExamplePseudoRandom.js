@@ -12,7 +12,7 @@ describe("ExamplePseudoRandom", function () {
   it("Build random NFT indexes", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["ENTROPY"],
+      dataPackagesIds: ["ENTROPY"],
     });
 
     // Interact with the contract (getting oracle value securely)

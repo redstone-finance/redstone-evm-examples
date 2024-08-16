@@ -15,7 +15,7 @@ describe("ManualPayloadExample", function () {
   const getPayload = async (contract) => {
     const wrapper = new DataServiceWrapper({
       dataServiceId: "redstone-main-demo",
-      dataFeeds: ["STX"],
+      dataPackagesIds: ["STX"],
     });
     const redstonePayload = await wrapper.getRedstonePayloadForManualUsage(
       contract
@@ -54,7 +54,7 @@ describe("ManualPayloadExample", function () {
     const dataPackages = await sdk.requestDataPackages({
       dataServiceId: "redstone-main-demo",
       uniqueSignersCount: 1,
-      dataFeeds: ["STX"],
+      dataPackagesIds: ["STX"],
       urls: ["https://d33trozg86ya9x.cloudfront.net"],
     });
 

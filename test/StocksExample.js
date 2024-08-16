@@ -12,7 +12,7 @@ describe("StocksExample", function () {
   it("Get TSLA price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["TSLA"],
+      dataPackagesIds: ["TSLA"],
     });
 
     // Interact with the contract (getting oracle value securely)

@@ -20,7 +20,7 @@ describe("AvalancheProdExample", function () {
   it("Get AVAX price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["AVAX"],
+      dataPackagesIds: ["AVAX"],
     });
 
     // Interact with the contract (getting oracle value securely)
@@ -31,7 +31,7 @@ describe("AvalancheProdExample", function () {
   it("Get AVAX price securely with custom urls", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["AVAX"],
+      dataPackagesIds: ["AVAX"],
       urls: redstoneCacheLayerUrls
     });
 
@@ -43,7 +43,7 @@ describe("AvalancheProdExample", function () {
   it("Get AVAX price securely with custom unique signers count", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["AVAX"],
+      dataPackagesIds: ["AVAX"],
       uniqueSignersCount: 4,
     });
 
@@ -55,7 +55,7 @@ describe("AvalancheProdExample", function () {
   it("Get AVAX price securely with custom data-service-id", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["AVAX"],
+      dataPackagesIds: ["AVAX"],
       dataServiceId: "redstone-avalanche-prod"
     });
 
@@ -67,7 +67,7 @@ describe("AvalancheProdExample", function () {
   it("Get price for AVAX, ETH, and PNG in the same call (several data feeds specified)", async () => {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["AVAX", "ETH", "PNG"],
+      dataPackagesIds: ["AVAX", "ETH", "PNG"],
     });
     const ids = ["AVAX", "ETH", "PNG"].map(dataFeedId => formatBytes32String(dataFeedId));
     const prices = await wrappedContract.getLatestPricesForManyAssets(ids);
@@ -77,7 +77,7 @@ describe("AvalancheProdExample", function () {
   it("Get price for AVAX, ETH, and PNG in the same call (no data feeds specified)", async () => {
     // Wrapping the contract
     const feeds = ["AVAX", "ETH", "PNG"];
-    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({ dataFeeds: feeds });
+    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({ dataPackagesIds: feeds });
     const ids = feeds.map(dataFeedId => formatBytes32String(dataFeedId));
     const prices = await wrappedContract.getLatestPricesForManyAssets(ids);
     console.log(prices);
@@ -86,7 +86,7 @@ describe("AvalancheProdExample", function () {
   it("Get price for AVAX, ETH, and PNG in the same call (with dupliates)", async () => {
     // Wrapping the contract
     const feeds = ["AVAX", "ETH", "PNG", "ETH", "ETH", "PNG"];
-    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({ dataFeeds: feeds });
+    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({ dataPackagesIds: feeds });
     const ids = feeds.map(dataFeedId => formatBytes32String(dataFeedId));
     const prices = await wrappedContract.getLatestPricesForManyAssetsWithDuplicates(ids);
     console.log(prices);
@@ -94,7 +94,7 @@ describe("AvalancheProdExample", function () {
 
   it("Should populate transaction", async () => {
     const feeds = ["AVAX", "ETH", "PNG"];
-    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({ dataFeeds: feeds });
+    const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({ dataPackagesIds: feeds });
     const ids = feeds.map(dataFeedId => formatBytes32String(dataFeedId));
     const tx = await wrappedContract.populateTransaction.getLatestPricesForManyAssets(ids);
     const redstoneMarker = REDSTONE_MARKER_HEX.replace("0x", "");

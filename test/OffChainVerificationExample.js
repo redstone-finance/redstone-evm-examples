@@ -10,7 +10,7 @@ describe("OffChainVerificationExample", () => {
     console.log(JSON.stringify(oracleStateWithSigners, null, 2));
 
     const dataPackagesResponse = await sdk.requestDataPackages({
-      dataFeeds: ["TON", "USDC", "USDT"],
+      dataPackagesIds: ["TON", "USDC", "USDT"],
       dataServiceId: "redstone-primary-prod",
       uniqueSignersCount: 3,
       urls: [

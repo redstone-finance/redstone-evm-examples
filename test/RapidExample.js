@@ -12,7 +12,7 @@ describe("RapidExample", function () {
   it("Get ETH price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["ETH"],
+      dataPackagesIds: ["ETH"],
     });
 
     // Interact with the contract (getting oracle value securely)

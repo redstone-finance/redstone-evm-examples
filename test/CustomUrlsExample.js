@@ -14,7 +14,7 @@ describe.skip("CustomUrlsExample", function () {
   it("Get Custom Url (Bored Ape Yacht Club floor price) price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["0x60cbe6b18347697f"],
+      dataPackagesIds: ["0x60cbe6b18347697f"],
     });
 
     // Interact with the contract (getting oracle value securely)

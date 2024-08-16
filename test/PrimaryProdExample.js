@@ -13,7 +13,7 @@ describe("PrimaryProdExample", function () {
   it("Get VST price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["VST"],
+      dataPackagesIds: ["VST"],
     });
 
     // Interact with the contract (getting oracle value securely)
@@ -24,7 +24,7 @@ describe("PrimaryProdExample", function () {
   it("Get SWETH price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["SWETH"],
+      dataPackagesIds: ["SWETH"],
     });
 
     // Interact with the contract (getting oracle value securely)

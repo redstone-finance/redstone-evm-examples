@@ -13,7 +13,7 @@ describe("ArbitrumProdExample", function () {
   it("Get ARB price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["ARB"],
+      dataPackagesIds: ["ARB"],
     });
 
     // Interact with the contract (getting oracle value securely)
@@ -24,7 +24,7 @@ describe("ArbitrumProdExample", function () {
   it("Get GMX price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["GMX"],
+      dataPackagesIds: ["GMX"],
     });
 
     // Interact with the contract (getting oracle value securely)

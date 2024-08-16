@@ -17,7 +17,7 @@ describe("ExampleWithHistoricalData", function () {
   it.skip("Get historical STX price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataFeeds: ["STX"],
+      dataPackagesIds: ["STX"],
       historicalTimestamp: dataPackagesTimestamp,
     });
 
