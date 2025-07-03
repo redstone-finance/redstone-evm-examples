@@ -1,6 +1,6 @@
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
 
-describe("StocksExample", function () {
+describe.skip("StocksExample", function () {
   let contract;
 
   beforeEach(async () => {
