@@ -10,15 +10,15 @@ describe("PrimaryProdExample", function () {
     contract = await PrimaryProdExample.deploy();
   });
 
-  it("Get VST price securely", async function () {
+  it("Get BTC price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataPackagesIds: ["VST"],
+      dataPackagesIds: ["BTC"],
     });
 
     // Interact with the contract (getting oracle value securely)
-    const vstPriceFromContract = await wrappedContract.getLatestPrice(formatBytes32String("VST"));
-    console.log({ vstPriceFromContract });
+    const btcPriceFromContract = await wrappedContract.getLatestPrice(formatBytes32String("BTC"));
+    console.log({ btcPriceFromContract });
   });
 
   it("Get SWETH price securely", async function () {
