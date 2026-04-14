@@ -1,0 +1,21 @@
+{
+  "name": "redstone-oev-example-sub",
+  "version": "1.0.0",
+  "description": "Subscription example for Redstone OEV Auctions",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ws": "^8.18.0",
+    "@redstone-finance/utils": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/ws": "^8.5.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0"
+  }
+}
