@@ -27,9 +27,14 @@ interface IWHYPE {
     function balanceOf(address account) external view returns (uint256);
 }
 
+interface IOperationCallback {
+    function liquidate(uint256 bidAmount, address solver, bytes calldata operationData) external;
+    function payBid(uint256 bidAmount) external;
+}
+
 // Example Solver compatible with Morpho-like protocols on HyperEVM.
 // Not meant to be used in production environment.
-contract Solver is IMorphoLiquidateCallback {
+contract Solver is IMorphoLiquidateCallback, IOperationCallback {
     address payable public owner;
     address public morpho;
     address payable public whype;
