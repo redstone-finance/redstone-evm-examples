@@ -28,6 +28,7 @@ interface IWHYPE {
 }
 
 // Example Solver compatible with Morpho-like protocols on HyperEVM.
+// Not meant to be used in production environment.
 contract Solver is IMorphoLiquidateCallback {
     address payable public owner;
     address public morpho;
@@ -59,7 +60,6 @@ contract Solver is IMorphoLiquidateCallback {
         uint256 seizedAssets;
         uint256 repaidShares;
         SwapStep[] swapSteps;
-        uint256 minProfit;
     }
 
     struct CallbackData {
@@ -107,10 +107,6 @@ contract Solver is IMorphoLiquidateCallback {
     function liquidate(uint256 bidAmount, address solver, bytes calldata operationData) external onlyExecutor {
         emit LiquidateCalled(bidAmount, solver);
 
-        pendingBid = bidAmount;
-
-        uint256 balanceBefore = address(this).balance;
-
         LiquidationParams[] memory params = abi.decode(operationData, (LiquidationParams[]));
 
         uint256 successCount = 0;
@@ -146,8 +142,6 @@ contract Solver is IMorphoLiquidateCallback {
 
             uint256 actualRepaidShares = param.repaidShares > 0 ? uint256(onChainBorrowShares) : 0;
 
-            uint256 balanceBeforeLiq = address(this).balance;
-
             try IMorpho(morpho).liquidate(
                 MarketParams(loanToken, collateralToken, oracle, irm, lltv),
                 param.borrower,
@@ -167,6 +161,9 @@ contract Solver is IMorphoLiquidateCallback {
         }
 
         require(successCount > 0, lastReason);
+
+        // note: you verify the actual profit according to your own rules
+        // to prevent unprofitable liquidations and protect against MEV sandwich attacks
 
         // Convert remaining WHYPE to HYPE
         uint256 whypeBalance = IWHYPE(whype).balanceOf(address(this));
@@ -208,6 +205,8 @@ contract Solver is IMorphoLiquidateCallback {
                 recipient: address(this),
                 deadline: block.timestamp,
                 amountIn: balance,
+                // note: allows any slippage, should be only used with manual profit check
+                // otherwise - set to a preferred value
                 amountOutMinimum: 0,
                 sqrtPriceLimitX96: 0
             }));
