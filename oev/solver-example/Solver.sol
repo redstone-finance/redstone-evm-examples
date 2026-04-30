@@ -162,7 +162,7 @@ contract Solver is IMorphoLiquidateCallback {
 
         require(successCount > 0, lastReason);
 
-        // note: you verify the actual profit according to your own rules
+        // note: you should verify the actual profit according to your own rules
         // to prevent unprofitable liquidations and protect against MEV sandwich attacks
 
         // Convert remaining WHYPE to HYPE
