@@ -179,7 +179,7 @@ contract Solver is IMorphoLiquidateCallback, IOperationCallback {
     }
 
     function payBid(uint256 bidAmount) external onlyExecutor {
-        // note: you should verify whether there is a pending bid to be payed
+        // note: you should verify whether there is a pending bid to be paid
         emit PayBidCalled(bidAmount);
         (bool ok,) = payable(msg.sender).call{value: bidAmount}("");
         require(ok, "Transfer failed");
