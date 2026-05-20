@@ -1,21 +1,21 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
-import { ResilientWebSocketClient } from './client/ResilientWebSocketClient';
-import { PayloadType } from './client/types';
-import { RedstoneCommon } from '@redstone-finance/utils';
+import { ResilientWebSocketClient } from "./client/ResilientWebSocketClient";
+import { PayloadType } from "./client/types";
+import { RedstoneCommon } from "@redstone-finance/utils";
 
 const WS_URL = process.env.WS_URL!;
 const API_KEY = process.env.API_KEY!; // the apiKey received from RedStone
 
 async function main() {
-  console.log('Starting External WebSocket Solver Example...');
+  console.log("Starting External WebSocket Solver Example...");
 
   const client = new ResilientWebSocketClient({
-    clientId: 'redstone-solver-example',
+    clientId: "redstone-solver-example",
     url: WS_URL,
     wsOptions: {
-      headers: { 'x-api-key': API_KEY },
+      headers: { "x-api-key": API_KEY },
     },
     rotation: {
       ttl: RedstoneCommon.hourToMs(7), // 7h
@@ -26,7 +26,7 @@ async function main() {
         console.log(msg);
 
         // We only care about auction broadcasts
-        if (msg.op !== 'auction') {
+        if (msg.op !== "auction") {
           return;
         }
 
@@ -81,15 +81,15 @@ async function main() {
 
           wsClient.send(
             JSON.stringify({
-              op: 'solve',
+              op: "solve",
               id: auctionId,
               data: {
-                bid: '2000000000000000', // 0.002 ETH in wei, representing your OEV bid
-                nonce: '1',
-                operationCallback: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', // your Solver smart contract address
-                operationData: '0x1234', // calldata to be provided to the Solver smart contract
-                liquidationSig: '0x55522b',
-                maxTxGasPrice: '50000000000',
+                bid: "0.002", // a decimal string representing your OEV bid (0.002 ETH in this example). Result of ethers.formatEther of your bid.
+                nonce: "1",
+                operationCallback: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", // your Solver smart contract address
+                operationData: "0x1234", // calldata to be provided to the Solver smart contract
+                liquidationSig: "0x55522b",
+                maxTxGasPrice: "50000000000",
               },
             }),
             PayloadType.SECRETS,
@@ -100,7 +100,7 @@ async function main() {
           );
         }
       } catch (e) {
-        console.error('Failed to parse incoming message:', e);
+        console.error("Failed to parse incoming message:", e);
       }
     },
   });
@@ -108,11 +108,11 @@ async function main() {
   // Subscribe to the oev/feeds topic.
   // ResilientWebSocketClient will automatically re-send this upon any disconnections/reconnections.
   await client.subscribe({
-    key: 'oev',
+    key: "oev",
     buildSubscribe: () =>
       JSON.stringify({
-        op: 'subscribe',
-        topic: 'oev/feeds',
+        op: "subscribe",
+        topic: "oev/feeds",
       }),
   });
 
