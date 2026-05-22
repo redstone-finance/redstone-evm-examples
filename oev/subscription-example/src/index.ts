@@ -86,8 +86,8 @@ async function main() {
               data: {
                 bid: "0.002", // a decimal string representing your OEV bid (0.002 ETH in this example). Result of ethers.formatEther of your bid.
                 nonce: "1",
-                operationCallback: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", // your Solver smart contract address
-                operationData: "0x1234", // calldata to be provided to the Solver smart contract
+                operationCallback: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", // your Liquidator smart contract address
+                operationData: "0x1234", // calldata to be provided to the Liquidator smart contract
                 liquidationSig: "0x55522b",
                 maxTxGasPrice: "50000000000",
               },
@@ -113,6 +113,17 @@ async function main() {
       JSON.stringify({
         op: "subscribe",
         topic: "oev/feeds",
+      }),
+  });
+
+  await client.subscribe({
+    key: "oev-notify",
+    buildSubscribe: () =>
+      JSON.stringify({
+        op: "subscribe",
+        // or oev/notify/{liquidator_contract_address.toLowerCase()} - to receive only liquidator contract specific notifications
+        // eg: oev/notify/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c
+        topic: "oev/notify",
       }),
   });
 
