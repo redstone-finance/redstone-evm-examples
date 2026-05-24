@@ -18,7 +18,7 @@ contract StocksExample is StocksDemoConsumerBase {
   //   // Getting data timestamp from future seems quite unlikely
   //   // But we've already spent too much time with different cases
   //   // Where block.timestamp was less than dataPackage.timestamp.
-  //   // Some blockchains may case this problem as well.
+  //   // Some blockchains may cause this problem as well.
   //   // That's why we add MAX_BLOCK_TIMESTAMP_DELAY
   //   // and allow data "from future" but with a small delay
   //   // require(

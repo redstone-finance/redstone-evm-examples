@@ -13,7 +13,7 @@ contract ManualPayloadExample is MainDemoConsumerBase {
   }
 
   /**
-   * Returns the latest price of the give asset
+   * Returns the latest price of the given asset
    * Doesn't need to be called on a wrapped contract instance
    * But requires to pass a valid manual payload
    */
