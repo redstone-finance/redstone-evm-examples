@@ -13,7 +13,7 @@ module.exports = {
 
   mocha: {
     timeout: 120_000,
-    // API keys on the basic plan are limited to 1 request per second
+    // RedStone gateway API keys are rate limited to 1 request per second
     rootHooks: { afterEach: () => new Promise((resolve) => setTimeout(resolve, 1000)) },
   },
 };
