@@ -1,4 +1,4 @@
-const redstone = require("redstone-protocol");
+const redstone = require("@redstone-finance/protocol");
 const { BigNumber } = require("ethers");
 const { arrayify, hexlify, toUtf8String } = require("ethers/lib/utils");
 

@@ -8,4 +8,8 @@ contract PrimaryProdExample is PrimaryProdDataServiceConsumerBase {
   function getLatestPrice(bytes32 dataFeedId) public view returns (uint256) {
     return getOracleNumericValueFromTxMsg(dataFeedId);
   }
+
+  function getLatestPriceWithManualPayload(bytes32 dataFeedId, bytes calldata) public view returns (uint256) {
+    return getLatestPrice(dataFeedId);
+  }
 }

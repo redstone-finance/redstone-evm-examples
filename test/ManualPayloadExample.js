@@ -1,21 +1,22 @@
 const sdk = require("@redstone-finance/sdk");
 const {
   DataPackagesWrapper,
-} = require("@redstone-finance/evm-connector/dist/src/wrappers/DataPackagesWrapper");
-const {
-  convertStringToBytes32,
-} = require("@redstone-finance/protocol/dist/src/common/utils");
-const {
   DataServiceWrapper,
-} = require("@redstone-finance/evm-connector/dist/src/wrappers/DataServiceWrapper");
+} = require("@redstone-finance/evm-connector");
+const {
+  utils: { convertStringToBytes32 },
+} = require("@redstone-finance/protocol");
+const { getAuthenticatedGateways } = require("../utils/authenticated-gateways");
 
 describe("ManualPayloadExample", function () {
   let contract;
 
   const getPayload = async (contract) => {
     const wrapper = new DataServiceWrapper({
-      dataServiceId: "redstone-main-demo",
-      dataPackagesIds: ["STX"],
+      dataServiceId: "redstone-primary-prod",
+      dataPackagesIds: ["BTC"],
+      authorizedSigners: sdk.getSignersForDataServiceId("redstone-primary-prod"),
+      authenticatedGateways: getAuthenticatedGateways(),
     });
     const redstonePayload = await wrapper.getRedstonePayloadForManualUsage(
       contract
@@ -31,41 +32,42 @@ describe("ManualPayloadExample", function () {
     contract = await ManualPayloadExample.deploy();
   });
 
-  it("Get STX price securely using manually built redstone payload", async function () {
+  it("Get BTC price securely using manually built redstone payload", async function () {
     const payload = await getPayload(contract);
-    const stxPrice = await contract.getLatestPrice(
-      convertStringToBytes32("STX"),
+    const btcPrice = await contract.getLatestPrice(
+      convertStringToBytes32("BTC"),
       payload
     );
-    console.log({ stxPrice });
+    console.log({ btcPrice });
   });
 
-  it("Get STX price securely using external contract", async function () {
+  it("Get BTC price securely using external contract", async function () {
     const payload = await getPayload(contract);
-    const stxPrice = await contract.getLatestPriceFromAnotherContract(
-      convertStringToBytes32("STX"),
+    const btcPrice = await contract.getLatestPriceFromAnotherContract(
+      convertStringToBytes32("BTC"),
       payload
     );
-    console.log({ stxPrice });
+    console.log({ btcPrice });
   });
 
-  it("Get STX price securely using manually built redstone payload (using data packages wrapper)", async function () {
+  it("Get BTC price securely using manually built redstone payload (using data packages wrapper)", async function () {
     // Query for data packages
     const dataPackages = await sdk.requestDataPackages({
-      dataServiceId: "redstone-main-demo",
-      uniqueSignersCount: 1,
-      dataPackagesIds: ["STX"],
-      urls: ["https://d33trozg86ya9x.cloudfront.net"],
+      dataServiceId: "redstone-primary-prod",
+      uniqueSignersCount: 3,
+      dataPackagesIds: ["BTC"],
+      authorizedSigners: sdk.getSignersForDataServiceId("redstone-primary-prod"),
+      authenticatedGateways: getAuthenticatedGateways(),
     });
 
     // Building a payload for manual usage based on fetched data packages
     const wrapper = new DataPackagesWrapper(dataPackages);
     const redstonePayload = await wrapper.getRedstonePayloadForManualUsage();
 
-    const stxPrice = await contract.getLatestPrice(
-      convertStringToBytes32("STX"),
+    const btcPrice = await contract.getLatestPrice(
+      convertStringToBytes32("BTC"),
       redstonePayload
     );
-    console.log({ stxPrice });
+    console.log({ btcPrice });
   });
 });

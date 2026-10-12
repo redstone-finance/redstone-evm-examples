@@ -1,5 +1,7 @@
 const { formatBytes32String } = require("ethers/lib/utils");
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
+const { getSignersForDataServiceId } = require("@redstone-finance/sdk");
+const { getAuthenticatedGateways } = require("../utils/authenticated-gateways");
 
 describe("PrimaryProdExample", function () {
   let contract;
@@ -14,6 +16,8 @@ describe("PrimaryProdExample", function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
       dataPackagesIds: ["BTC"],
+      authorizedSigners: getSignersForDataServiceId("redstone-primary-prod"),
+      authenticatedGateways: getAuthenticatedGateways(),
     });
 
     // Interact with the contract (getting oracle value securely)
@@ -21,14 +25,16 @@ describe("PrimaryProdExample", function () {
     console.log({ btcPriceFromContract });
   });
 
-  it("Get SWETH price securely", async function () {
+  it("Get ETH price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataPackagesIds: ["SWETH"],
+      dataPackagesIds: ["ETH"],
+      authorizedSigners: getSignersForDataServiceId("redstone-primary-prod"),
+      authenticatedGateways: getAuthenticatedGateways(),
     });
 
     // Interact with the contract (getting oracle value securely)
-    const swethPriceFromContract = await wrappedContract.getLatestPrice(formatBytes32String("SWETH"));
-    console.log({ swethPriceFromContract });
+    const ethPriceFromContract = await wrappedContract.getLatestPrice(formatBytes32String("ETH"));
+    console.log({ ethPriceFromContract });
   });
 });

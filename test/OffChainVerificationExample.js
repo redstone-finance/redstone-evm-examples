@@ -2,6 +2,7 @@ const sdk = require("@redstone-finance/sdk");
 const { expect } = require("chai");
 const { BigNumber } = require("ethers");
 const { hexlify } = require("ethers/lib/utils");
+const { getAuthenticatedGateways } = require("../utils/authenticated-gateways");
 
 describe("OffChainVerificationExample", () => {
   it("Get data packages and extract signers", async () => {
@@ -13,10 +14,8 @@ describe("OffChainVerificationExample", () => {
       dataPackagesIds: ["TON", "USDC", "USDT"],
       dataServiceId: "redstone-primary-prod",
       uniqueSignersCount: 3,
-      urls: [
-        "https://oracle-gateway-1.a.redstone.finance",
-        "https://oracle-gateway-2.a.redstone.finance",
-      ],
+      authorizedSigners: sdk.getSignersForDataServiceId("redstone-primary-prod"),
+      authenticatedGateways: getAuthenticatedGateways(),
     });
 
     for (const [dataFeedId, dataPackages] of Object.entries(

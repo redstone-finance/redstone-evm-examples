@@ -2,14 +2,14 @@
 
 pragma solidity ^0.8.4;
 
-import "@redstone-finance/evm-connector/contracts/data-services/MainDemoConsumerBase.sol";
-import "./MainExample.sol";
+import "@redstone-finance/evm-connector/contracts/data-services/PrimaryProdDataServiceConsumerBase.sol";
+import "./PrimaryProdExample.sol";
 
-contract ManualPayloadExample is MainDemoConsumerBase {
-  MainExample externalContract;
+contract ManualPayloadExample is PrimaryProdDataServiceConsumerBase {
+  PrimaryProdExample externalContract;
 
   constructor() {
-    externalContract = new MainExample();
+    externalContract = new PrimaryProdExample();
   }
 
   /**
@@ -26,6 +26,6 @@ contract ManualPayloadExample is MainDemoConsumerBase {
     bytes32 assetDataFeedId,
     bytes calldata payload
   ) public view returns (uint256) {
-    return externalContract.getLatestValueWithManualPayload(assetDataFeedId, payload);
+    return externalContract.getLatestPriceWithManualPayload(assetDataFeedId, payload);
   }
 }

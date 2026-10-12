@@ -1,11 +1,13 @@
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
-const { expect } = require("chai");
+const { getSignersForDataServiceId } = require("@redstone-finance/sdk");
+const { getAuthenticatedGateways } = require("../utils/authenticated-gateways");
 
 describe("ExampleWithHistoricalData", function () {
   // Not all timestamps can be used for querying historical data
   // Usually it's enough to round your timestamp to whole minutes
   // or do smth like `yourTimestamp - (yourTimestamp % 60_000)`
-  const dataPackagesTimestamp = 1691593620000;
+  const oneMinuteAgo = Date.now() - 60_000;
+  const dataPackagesTimestamp = oneMinuteAgo - (oneMinuteAgo % 60_000);
   let contract;
 
   beforeEach(async () => {
@@ -14,16 +16,17 @@ describe("ExampleWithHistoricalData", function () {
     contract = await ExampleWithHistoricalData.deploy();
   });
 
-  it.skip("Get historical STX price securely", async function () {
+  it("Get historical BTC price securely", async function () {
     // Wrapping the contract
     const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-      dataPackagesIds: ["STX"],
+      dataPackagesIds: ["BTC"],
       historicalTimestamp: dataPackagesTimestamp,
+      authorizedSigners: getSignersForDataServiceId("redstone-primary-prod"),
+      authenticatedGateways: getAuthenticatedGateways(),
     });
 
     // Interact with the contract (getting oracle value securely)
-    const stxPrice = await wrappedContract.getHistoricalStxPrice(dataPackagesTimestamp);
-    console.log({ stxPrice });
-    expect(stxPrice).to.eq(58756427); // we know the exact historical value
+    const btcPrice = await wrappedContract.getHistoricalBtcPrice(dataPackagesTimestamp);
+    console.log({ btcPrice });
   });
 });
