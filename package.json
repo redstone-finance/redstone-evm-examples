@@ -27,9 +27,15 @@
     "typechain": "^8.1.0"
   },
   "dependencies": {
-    "@redstone-finance/evm-connector": "^0.6.1",
-    "@redstone-finance/oracles-monorepo": "https://github.com/redstone-finance/redstone-oracles-monorepo",
-    "@redstone-finance/sdk": "^0.6.1"
+    "@redstone-finance/evm-connector": "^1.0.0",
+    "@redstone-finance/protocol": "^1.0.0",
+    "@redstone-finance/sdk": "^1.0.0"
   },
-  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447",
+  "resolutions": {
+    "@redstone-finance/evm-connector/@redstone-finance/protocol": "1.0.0",
+    "@redstone-finance/evm-connector/@redstone-finance/sdk": "1.0.0",
+    "@redstone-finance/evm-connector/@redstone-finance/signing": "1.0.0",
+    "@redstone-finance/evm-connector/@redstone-finance/utils": "1.0.0"
+  }
 }
